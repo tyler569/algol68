@@ -1,5 +1,5 @@
 
-PROC (INT) INT bad fib = (INT x) INT: (
+PROC bad fib = (INT x) INT: (
     INT result;
     IF x < 1 THEN
         result := 1
@@ -9,7 +9,7 @@ PROC (INT) INT bad fib = (INT x) INT: (
     result
 );
 
-PROC (INT, INT, INT) INT acc fib = (INT n, INT p, INT x) INT: (
+PROC acc fib = (INT n, INT p, INT x) INT: (
     INT result;
     IF n = 0 THEN
         result := x
