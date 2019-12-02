@@ -1,0 +1,16 @@
+
+PROC add one = (REF INT p) VOID: (
+    p +:= 1
+);
+
+main: (
+    INT x := 10;
+    REF INT y := x;
+    add one (y);
+    print (("x is now ", x, new line));
+
+    NEW INT a := 10;
+    add one (a);
+    print (("a is now ", a, new line))
+)
+
