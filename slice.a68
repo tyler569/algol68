@@ -1,0 +1,9 @@
+
+main: (
+    [20] CHAR words := "these are some words";
+    REF [] CHAR slice := words[5:15];
+    FOR i FROM LWB slice TO UPB slice DO
+        print ((i, " ", slice[i], new line))
+    OD
+)
+
