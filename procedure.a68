@@ -1,0 +1,20 @@
+
+PROC ([] INT) INT sum = ([] INT a) INT: (
+    INT sum := 0;
+    FOR i FROM LWB a TO UPB a DO
+        sum +:= a[i]
+    OD;
+    sum
+);
+
+main: (
+    print (("input two numbers", new line));
+    INT x = read int;
+    INT y = read int;
+    [] INT z = (x, y);
+
+    #[] INT z = (1, 2, 3);#
+
+    print (("sum is", sum (z), new line))
+)
+
