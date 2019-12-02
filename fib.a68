@@ -1,0 +1,17 @@
+
+PROC (INT) INT bad fibonacci = (INT x) INT: (
+    INT result;
+    IF x < 1 THEN
+        result := 1
+    ELSE
+        result := bad fibonacci (x - 1) + bad fibonacci (x - 2)
+    FI;
+    result
+);
+
+main: (
+    FOR i FROM 0 TO 10 DO
+        print (("bad fibonacci(", i, ") -> ", bad fibonacci(i), new line))
+    OD
+)
+
