@@ -1,17 +1,30 @@
 
-PROC (INT) INT bad fibonacci = (INT x) INT: (
+PROC (INT) INT bad fib = (INT x) INT: (
     INT result;
     IF x < 1 THEN
         result := 1
     ELSE
-        result := bad fibonacci (x - 1) + bad fibonacci (x - 2)
+        result := bad fib (x - 1) + bad fib (x - 2)
+    FI;
+    result
+);
+
+PROC (INT, INT, INT) INT acc fib = (INT n, INT p, INT x) INT: (
+    INT result;
+    IF n = 0 THEN
+        result := x
+    ELSE
+        result := acc fib(n - 1, x, p + x)
     FI;
     result
 );
 
 main: (
     FOR i FROM 0 TO 10 DO
-        print (("bad fibonacci(", i, ") -> ", bad fibonacci(i), new line))
+        print (("bad fib(", i, ") -> ", bad fib(i), new line))
+    OD;
+    FOR i FROM 0 TO 10 DO
+        print (("acc fib(", i, ") -> ", acc fib(i, 1, 1), new line))
     OD
 )
 
