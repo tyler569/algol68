@@ -1,0 +1,9 @@
+
+PROC use lambda = (INT x, PROC (INT) INT y) INT: (
+    y(x)
+);
+
+main: (
+    print (( use lambda (10, (INT x) INT: (x + 1) ), new line ))
+)
+
